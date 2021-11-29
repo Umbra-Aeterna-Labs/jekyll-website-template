@@ -1,0 +1,32 @@
+name: Jekyll site CI
+
+on: [ push, pull_request ]
+#  push:
+#    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && jekyll build --future"
+#    - name: Add version to env
+#      run: echo "$GITHUB_BASE_REF" >> $GITHUB_ENV
+    - name: Create CI Badge
+      uses: Schneegans/dynamic-badges-action@v1.0.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: e99ded6c32d2e8ac8fa156166571eace
+        filename: badge-ci.json
+        label: Jekyll site CI
+        namedLogo: GitHub
+        message: ${{ env.GITHUB_BASE_REF }}
+        color: grey
