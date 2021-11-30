@@ -1,0 +1,3 @@
+<h2>|FOOTER_TITLE|</h2>
+<p>|FOOTER_CONTENT|</p>
+<p>Copyright © |COPYRIGHT_YEAR| |COMPANY_NAME|. &lt;|COMPANY_WEBSITE|&gt;</p>
