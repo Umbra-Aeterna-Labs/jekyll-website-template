@@ -1,0 +1,11 @@
+page_list_title: Site Map
+pages:
+
+  - title: Home
+    url: index.html
+
+  - title: About
+    url: about.html
+
+  - title: Contact
+    url: contact.html

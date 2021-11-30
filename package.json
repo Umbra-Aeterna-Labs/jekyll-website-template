@@ -1,0 +1,6 @@
+{
+  "name": "jekyll-website-template",
+  "version": "0.1.0",
+  "license": "none",
+  "description": "A template for a simple website running Jekyll, for deployment on GitHub Pages"
+}
