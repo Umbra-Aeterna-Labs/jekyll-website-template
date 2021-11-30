@@ -1,4 +1,26 @@
+### Directory-based project format:
+.idea
+.idea/workspace.xml
+**/.idea/*
+**/.idea/workspace.xml
+
+### Lock files
+.~lock*
+
+### Plasma 5 .directory files
+.directory
+**/.directory
+**/.directory*
+
+### Custom scratch files
+scratch/
+
+### generated site files for Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+### Bundler and gem files
+.bundle/
+vendor/
